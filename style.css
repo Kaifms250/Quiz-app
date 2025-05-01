@@ -1,0 +1,184 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6e7dff, #ff60a5);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  #start-box, #quiz-box, #result-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 1s ease-out;
+  }
+  
+  #start-box {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: slideInFromLeft 1s ease-out;
+  }
+  
+  input {
+    padding: 12px;
+    font-size: 18px;
+    width: 80%;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  input:focus {
+    border-color: #ff60a5;
+    outline: none;
+  }
+  
+  button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 50%;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  #quiz-box {
+    display: none;
+    text-align: center;
+  }
+  
+  #question {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  #answer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  button.correct {
+    background-color: green !important;
+    animation: pulseGreen 0.6s ease-out;
+  }
+  
+  button.incorrect {
+    background-color: red !important;
+    animation: pulseRed 0.6s ease-out;
+  }
+  
+  .progress-container {
+    width: 100%;
+    background-color: #ddd;
+    height: 10px;
+    margin-top: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  #progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: #4CAF50;
+    animation: progressBarAnim 10s linear forwards;
+  }
+  
+  #result-box {
+    display: none;
+    text-align: center;
+  }
+  
+  #result-text {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  #restart-btn {
+    background-color: #008CBA;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 50%;
+    margin-top: 20px;
+  }
+  
+  #restart-btn:hover {
+    background-color: #006f8c;
+  }
+  
+  /* Animation for fading in the screen */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Animation for sliding the start box up */
+  @keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Animation for sliding the text from the left */
+  @keyframes slideInFromLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  /* Animation for pulsating green for correct answers */
+  @keyframes pulseGreen {
+    0% { background-color: green; }
+    50% { background-color: #3e8e41; }
+    100% { background-color: green; }
+  }
+  
+  /* Animation for pulsating red for incorrect answers */
+  @keyframes pulseRed {
+    0% { background-color: red; }
+    50% { background-color: #c0392b; }
+    100% { background-color: red; }
+  }
+  
+  /* Progress bar animation */
+  @keyframes progressBarAnim {
+    0% { width: 100%; }
+    100% { width: 0; }
+  }
+  
